@@ -9,7 +9,7 @@ async function test() {
         console.log('Start...')
         h1.innerHTML += '<br> Start local...'
 
-        const resp = await fetch('http://192.168.1.11:8088/datasnap/rest/TServerMethods1/testJS',
+        const resp = await fetch('http://localhost:8088/datasnap/rest/TServerMethods1/testJS',
             {
                 method: 'GET',
                 headers: {
