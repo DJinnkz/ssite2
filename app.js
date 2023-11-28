@@ -9,7 +9,7 @@ async function test() {
         console.log('Start...')
         h1.innerHTML += '<br> Start github static IP https...'
 
-        const resp = await fetch('https://185.215.160.230:8088/datasnap/rest/TServerMethods1/testJS',
+        const resp = await fetch('http://185.215.160.230:8088/datasnap/rest/TServerMethods1/testJS',
             {
                 method: 'GET',
                 headers: {
