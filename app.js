@@ -7,9 +7,9 @@ async function test() {
     try {
 
         console.log('Start...')
-        h1.innerHTML += '<br> Start github localhost...'
+        h1.innerHTML += '<br> Start github nolocalhost...'
 
-        const resp = await fetch('http://localhost:8088/datasnap/rest/TServerMethods1/testJS',
+        const resp = await fetch('http://192.168.1.11:8088/datasnap/rest/TServerMethods1/testJS',
             {
                 method: 'GET',
                 headers: {
