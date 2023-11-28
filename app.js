@@ -1,79 +1,46 @@
 
+const h1 = document.getElementById('test')
 
-// const list = document.getElementById('list')
-const list = document.querySelector('#list')
-const filter = document.querySelector('#filter')
-let USERS = []
+h1.innerHTML += '<br> test 2'
 
-filter.addEventListener('input', (event) => {
-    console.log(event.target.value)
-
-    const value = event.target.value.toLowerCase()
-
-    const filteredUsers = USERS.filter((user) => user.name.toLowerCase().includes(value))
-
-    render(filteredUsers)
-
-
-
-})
-
-
-
-// function hideAddressBar() {
-//     if(!window.location.hash) {
-//       if(document.height < window.outerHeight)
-//         document.body.style.height = (window.outerHeight + 50) + 'px';
-//       setTimeout( function(){ 
-//           window.scrollTo(0, 1); 
-//           document.body.style.height = 'auto'; 
-//         }, 50 );
-//     }
-//   }
-
-async function start() {
-
-    //hideAddressBar()
-
-    list.innerHTML = 'loading...'
+async function test() {
     try {
-        const resp = await fetch('https://jsonplaceholder.typicode.com/users')
-        const data = await resp.json()
-        // setTimeout(() => {
-        console.log('timeout')
-        USERS = data
-        render(data)
-        // }, 2000)
+
+        console.log('Start...')
+        h1.innerHTML += '<br> Start...'
+
+        const resp = await fetch('http://localhost:8088/datasnap/rest/TServerMethods1/testJS',
+            {
+                method: 'GET',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+
+            console.log('2...')
+            h1.innerHTML += '<br> 2...'
+
+            const data = await resp.json()
+
+            console.log('3...')
+            h1.innerHTML += '<br> 3...'
+
+        console.log(data)
+        h1.innerHTML += '<br> ' + data.name + ' ' + data.name2
+
 
     } catch (error) {
-        list.style.color = 'red'
-        list.innerHTML = error.message
-    }
-}
-
-
-function render(users = []) {
-
-    if (users.length === 0) {
-        list.innerHTML = 'Not match'
-        return
+        console.log('Error: ', error.message)
+        h1.innerHTML += '<br> Error: ' + error.message
+    } finally{
+        console.log('End')
+        h1.innerHTML += '<br> End'
     }
 
-    try {
-        const html = users.map(toHTML).join('')
-        list.innerHTML = html
 
-    } catch (error) {
-        console.log(error.message)
-    }
 }
 
+test()
 
-function toHTML(user) {
-    return `<li class="list-group-item">${user.name}</li>`
-}
-
-
-start()
 
 
