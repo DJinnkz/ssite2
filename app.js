@@ -7,7 +7,7 @@ async function test() {
     try {
 
         console.log('Start...')
-        h1.innerHTML += '<br> Start local...'
+        h1.innerHTML += '<br> Start github localhost...'
 
         const resp = await fetch('http://localhost:8088/datasnap/rest/TServerMethods1/testJS',
             {
