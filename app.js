@@ -6,8 +6,8 @@ h1.innerHTML += '<br> test 2 test github'
 async function test() {
     try {
 
-        console.log('Start...')
-        h1.innerHTML += '<br> Start github localhost...'
+        console.log('Start ...')
+        h1.innerHTML += '<br> Start 2...'
 
         const resp = await fetch('http://127.0.0.1:8088/datasnap/rest/TServerMethods1/testJS',
             {
