@@ -1,7 +1,7 @@
 
 const h1 = document.getElementById('test')
 
-h1.innerHTML += '<br> test 2'
+h1.innerHTML += '<br> test 2 test github'
 
 async function test() {
     try {
