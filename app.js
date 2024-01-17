@@ -20,7 +20,7 @@ async function test() {
 
             console.log('2...')
             h1.innerHTML += '<br> 2...'
-h1.innerHTML += resp
+h1.innerHTML += toString(resp)
             const data = await resp.json()
 
             console.log('3...')
