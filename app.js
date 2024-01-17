@@ -14,7 +14,8 @@ async function test() {
             {
                 method: 'GET',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'ngrok-skip-browser-warning': '5'
                 }
             })
 
