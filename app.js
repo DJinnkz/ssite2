@@ -10,7 +10,7 @@ async function test() {
         h1.innerHTML += '<br> Start 2...'
 
         //const resp = await fetch('http://185.215.160.230:8088/datasnap/rest/TServerMethods1/testJS',
-        const resp = await fetch('https://aedd-185-215-160-230.ngrok-free.app/datasnap/rest/TServerMethods1/testJS',                         
+        const resp = await fetch('https://9552-185-215-160-230.ngrok-free.app/datasnap/rest/TServerMethods1/testJS',                         
             {
                 method: 'GET',
                 headers: {
